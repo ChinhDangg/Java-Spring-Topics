@@ -1,0 +1,33 @@
+# Root Operation types
+type Query {
+    # name of query: return type
+    allBooks: [Book]
+    findOne(id: ID): Book
+    allBookPaged(page: Int, size: Int): [Book]
+}
+# []: collection
+# top level operation:
+# Query: retrieve data
+# mutation: change data
+# subscription: create a connection read data and keep that connection open for when data changes
+
+# Object types
+type Book {
+    id: ID!
+    title: String
+    pages: Int
+    rating: Rating
+    author: Author
+}
+
+type Rating {
+    rating: String
+    star: String
+}
+
+type Author {
+    id: ID!
+    firstName: String
+    lastName: String
+    books: [Book]
+}
