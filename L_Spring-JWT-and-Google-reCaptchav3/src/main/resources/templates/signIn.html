@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login with reCAPTCHA v3</title>
+    <link rel="icon" href="data:,">
+    <script src="https://www.google.com/recaptcha/api.js?render=6LfJOXYqAAAAAHvNbamcWfSd8q5nTIiD8nBx53MZ"></script>
+</head>
+<body>
+<form id="login-form" onsubmit="return submitForm(event)">
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" required><br>
+
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required><br>
+
+    <button type="submit">Login</button>
+</form>
+
+<script>
+    function submitForm(event) {
+        event.preventDefault();
+
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+
+        grecaptcha.ready(function() {
+            grecaptcha.execute('6LfJOXYqAAAAAHvNbamcWfSd8q5nTIiD8nBx53MZ', { action: 'login' }).then(function(token) {
+                fetch('http://localhost:8080/api/auth/token', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'recaptcha': token  // Send the reCAPTCHA token in the headers
+                    },
+                    body: JSON.stringify({ username, password })
+                })
+                    .then(response => {
+                        if (!response.ok) {
+                            return response.text().then(text => { throw new Error(text) });
+                        }
+                        console.log('recaptcha token ' + token)
+                        return response.text();  // Use text() to handle a plain string response
+                    })
+                    .then(token => {
+                        alert('Login successful!');
+                        // Store or use the JWT token as needed, e.g., save to localStorage
+                        //localStorage.setItem('jwtToken', token);
+                        console.log('jwtToken ' + token);
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        alert('An error occurred: ' + error.message);
+                    });
+
+            });
+        });
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+###
+POST http://localhost:8080/api/auth/token
+Content-Type: application/json
+
+{
+  "username": "user",
+  "password": "password"
+}
+
+###
+GET http://localhost:8080/api/dashboard
+Authorization: Bearer eyJraWQiOiJjOGFjOGE5NS1lOWQ2LTQyMmMtYjUwMy0xNThhOWNjMDY1OTMiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoidXNlciIsImV4cCI6MTczMDgzMzA2MCwiaWF0IjoxNzMwODI5NDYwLCJzY29wZSI6InJlYWQifQ.B3AxG6xptq-DaEBC1mP9Jpl_GhNA5DMim_bBYrdTRnaWm7p23g8iAucxFzKFbt4FFf1Z5ToK8EP8w9I0Q83to5fckkdWz1F6X8TzuwJHDrZ_lC_Qf7shTW1IPcRYn745lJjX0YCQ_XZuv0s-4n4lD0FtRNRMfisqROTSJeRHQb3sV2C1u6rhTtvqPs9Acjl0i4simsfQyMrJ0lBoOdouSHi8WaLkX-7NHLqQfJlUgFlyh2ChjEXw5g4dUgBCl59CBdRM9C0OWnEUWNAGR2n-yqCbS3oIm9sIcNDWgdCf3fw5OuZ_L0xTrKYN4bi9yApk7E7kOAidbx5hy128O27qcg
+
+###
+GET http://localhost:8080/login

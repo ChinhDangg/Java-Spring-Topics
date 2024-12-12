@@ -6,7 +6,6 @@ import org.dev.database.l_jpapagination.model.Person;
 import org.dev.database.l_jpapagination.repository.PersonRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import java.util.List;
@@ -15,7 +14,7 @@ import java.util.stream.IntStream;
 @Component
 public class SampleDataLoader implements CommandLineRunner {
 
-    private Logger logger = LoggerFactory.getLogger(SampleDataLoader.class);
+    private final Logger logger = LoggerFactory.getLogger(SampleDataLoader.class);
     private final PersonRepository personRepository;
     private final Faker faker;
 

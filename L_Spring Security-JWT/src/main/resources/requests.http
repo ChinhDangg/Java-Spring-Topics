@@ -1,0 +1,13 @@
+###
+POST http://localhost:8080/token
+Content-Type: application/json
+
+{
+  "username": "user",
+  "password": "password"
+}
+
+###
+GET http://localhost:8080/
+Authorization: Bearer eyJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJzZWxmIiwic3ViIjoidXNlciIsImV4cCI6MTczMDMwODQ5NCwiaWF0IjoxNzMwMzA0ODk0LCJzY29wZSI6InJlYWQifQ.Azhd7epuCIKAq9e9tZLne6ishuH5GPNzXqztLLwbnOJIGInSBgKUgl_s3PzTWDoaafR0DLqO-99ZYvU4hmsJYzKedSUQ85UTV83mEnygfw1u3GMSzvnrGXUv47OPFgTiE3NYChxTQqD_kZ-Q9ZvN1p_r89s-6o4BD0PEaaDsllsJdhJL14u62061hOAjYfmcOi0ndDgwqs7YIHkIdpgMvHWG8obfEN08-tjdV7KcQ201Xla0y6XybNvpdxa8Ojo40tKN-z2TwjxJtCBZJzis_6vJkJt--qL4xkG3Rtgm6a8jzchwgnkDA7kJQ2xVCZJF496bTFjV0i4KpsRCSsZS5Q
+
