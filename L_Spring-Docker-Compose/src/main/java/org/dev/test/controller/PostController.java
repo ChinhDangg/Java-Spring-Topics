@@ -1,6 +1,6 @@
 package org.dev.test.controller;
 
-import org.dev.test.mode.Post;
+import org.dev.test.model.Post;
 import org.dev.test.repository.PostRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

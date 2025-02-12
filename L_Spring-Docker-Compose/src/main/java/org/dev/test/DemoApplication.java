@@ -1,6 +1,6 @@
 package org.dev.test;
 
-import org.dev.test.mode.Post;
+import org.dev.test.model.Post;
 import org.dev.test.repository.PostRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
