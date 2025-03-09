@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: jte-login
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: dd2e290e29di09wi0di #${GOOGLE_CLIENT_ID}
+            client-secret: 293890d8098d098d0as #${GOOGLE_CLIENT_SECRET}
+            scope:
+              - email
+              - profile
+          github:
+            client-id: 29e0928e092038e09 #${GITHUB_CLIENT_ID}
+            client-secret: 298e098098w098e #${GITHUB_CLIENT_SECRET}
+            scope:
+              - user:email
+              - read:user
+
+gg:
+  jte:
+    development-mode: true
+
+#logging:
+#  level:
+#    org:
+#      springframework:
+#        security: ERROR
