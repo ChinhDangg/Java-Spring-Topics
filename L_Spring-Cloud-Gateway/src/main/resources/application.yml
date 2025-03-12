@@ -1,0 +1,16 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: posts-route
+          uri: ${POSTS_ROUTE_URI:http://localhost8081}
+          predicates:
+            - Path=/posts/**
+          filters:
+            - PrefixPath=/api
+            - name: AddResponseHeader
+              args:
+                name: X-Powered-By
+                value: Someone
+            - AddResponseHeader2=X-Powered-by2,Someone
+
